@@ -28,20 +28,14 @@ bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
                 </thead>
                 <tbody>
                     @foreach ($articoli as $articolo)
-                                            <tr>
-                                                <td>{{ $articolo->id }}</td>
-                                                <td>{{ $articolo->nome }}</td>
-                                                <td>
-                                                    <a href="{{ route(
-        'articolo.show',
-        $articolo->id
-    ) }}" class="btn btn-info">Visualizza</a>
-                                                    <!-- Aggiungi pulsanti di modifica o
-                        eliminazione se necessario -->
-
-                                                </td>
-
-                                            </tr>
+                        <tr>
+                            <td>{{ $articolo->id }}</td>
+                            <td>{{ $articolo->nome }}</td>
+                            <td>
+                            <a href="{{ route('articolo.show',$articolo->id) }}" class="btn btn-info">Visualizza</a>
+                            <!-- Aggiungi pulsanti di modifica o eliminazione se necessario -->
+                            </td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>
