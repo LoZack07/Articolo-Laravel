@@ -33,7 +33,13 @@ bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
                             <td>{{ $articolo->nome }}</td>
                             <td>
                             <a href="{{ route('articolo.show',$articolo->id) }}" class="btn btn-info">Visualizza</a>
-                            <!-- Aggiungi pulsanti di modifica o eliminazione se necessario -->
+                            <a href="{{ route('articoli.edit', $articolo->id) }}" class="btn btn-warning btn-sm">Modifica</a>
+
+                                <form action="{{ route('articoli.destroy', $articolo->id) }}" method="POST" style="display:inline;">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Sei sicuro?')">Elimina</button>
+                                </form>
                             </td>
                         </tr>
                     @endforeach

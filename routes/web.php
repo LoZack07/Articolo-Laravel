@@ -23,3 +23,10 @@ Route::get('/articoli/create', [ArticoloController::class, 'create'])->name('art
 
 // Rotta per salvare i dati inviati dal form (metodo POST)
 Route::post('/articoli', [ArticoloController::class, 'store'])->name('articoli.store');
+
+// Modifica
+Route::get('/articoli/{id}/edit', [ArticoloController::class, 'edit'])->name('articoli.edit');
+Route::put('/articoli/{id}', [ArticoloController::class, 'update'])->name('articoli.update');
+
+// Elimina
+Route::delete('/articoli/{id}', [ArticoloController::class, 'destroy'])->name('articoli.destroy');
